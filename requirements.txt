@@ -7,3 +7,4 @@ torchaudio
 xgboost
 pandas
 numpy
+joblib
