@@ -14,13 +14,13 @@ genai.configure(api_key = api)
 model = genai.GenerativeModel("gemini-1.5-pro-latest")
 
 # load the trained models
-p_model = joblib.load('/models/xgboost/com_xgboost.pkl')
-le_model = joblib.load('/models/xgboost/LabelEncoder.pkl')
+p_model = joblib.load('models/xgboost/com_xgboost.pkl')
+le_model = joblib.load('models/xgboost/LabelEncoder.pkl')
 
 # list of symptoms
 symptom_list = []
 
-with open('/common_diseases.txt') as file:
+with open('common_diseases.txt') as file:
     symptom_list = [line.rstrip() for line in file]
 
 # streamlit app
