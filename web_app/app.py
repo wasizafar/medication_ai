@@ -5,11 +5,8 @@ import os
 import google.generativeai as genai
 
 # Config API Key
-api = []
-with open('/medication_ai/api.txt') as file:
-    api = [line for line in file]
 
-api = api[0]
+api = st.secrets(api_key)
 genai.configure(api_key = api)
 
 # Initialize the Gemini model
