@@ -5,6 +5,7 @@ import os
 import google.generativeai as genai
 
 # Config API Key
+print(os.getcwd())
 
 api = st.secrets["auth_Key"]
 genai.configure(api_key = api)
