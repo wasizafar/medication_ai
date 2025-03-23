@@ -5,17 +5,27 @@ import os
 import google.generativeai as genai
 
 # Config API Key
-print(os.getcwd())
+# print(os.getcwd())
+# os.chdir("../")
+# st.write(os.getcwd())
 
 api = st.secrets["auth_Key"]
+# api_key =  open('api.txt', 'r')
+# api = api_key.read()
 genai.configure(api_key = api)
 
-# Initialize the Gemini model
-model = genai.GenerativeModel("gemini-1.5-pro-latest")
+# cachig the models
+@st.cache_resource
+def load_model():
+    # load the trained modesl
+    p_model = joblib.load('models/xgboost/com_xgboost.pkl')
+    le_model = joblib.load('models/xgboost/LabelEncoder.pkl')
+    # Initialize the Gemini model
+    model = genai.GenerativeModel("gemini-1.5-pro-latest")
+    return p_model, le_model, model
 
-# load the trained models
-p_model = joblib.load('models/xgboost/com_xgboost.pkl')
-le_model = joblib.load('models/xgboost/LabelEncoder.pkl')
+# retriveng the models
+p_model, le_model, model = load_model()
 
 # list of symptoms
 symptom_list = []
