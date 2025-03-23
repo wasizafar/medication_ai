@@ -114,7 +114,7 @@ if page == 'Disease prediction':
                 st.caption(advice)
 
 if page == 'AI doctor':
-    st.title("🩺 AI Medical Chatbot")
+    st.header("🩺 AI Medical Chatbot")
 
     st.write("💬 Chat with an AI doctor about symptoms, diseases, or health advice.")
 
