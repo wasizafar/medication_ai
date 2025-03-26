@@ -4,6 +4,8 @@ import joblib
 import os
 import google.generativeai as genai
 
+# streamlit app
+st.set_page_config(page_title='MEDICATION AI', page_icon='🩺')
 # Config API Key
 # print(os.getcwd())
 # os.chdir("../")
@@ -33,8 +35,6 @@ symptom_list = []
 with open('common_diseases.txt') as file:
     symptom_list = [line.rstrip() for line in file]
 
-# streamlit app
-st.set_page_config(page_title='MEDICATION AI', page_icon='🩺')
 
 # Sidebar for nevigation
 page = st.sidebar.radio('Navigation',['Disease prediction', 'AI doctor'])
