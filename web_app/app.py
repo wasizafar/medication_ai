@@ -97,6 +97,7 @@ if page == 'Disease prediction':
                     3. Doctor consultation recommendation (if needed)
                     4. Foods to eat & avoid
                     5. Key precautions
+                    & aslo mention the disclaimer
                     Keep it short and clear
                     """
                     response = model.generate_content(prompt)
